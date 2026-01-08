@@ -1,0 +1,26 @@
+.embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 177.77%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-top: 16px;
+}
+.embed-container iframe, .embed-container blockquote {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 32px;
+  opacity: 0.85;
+
+  h3 {
+    margin-bottom: 8px;
+  }
+}

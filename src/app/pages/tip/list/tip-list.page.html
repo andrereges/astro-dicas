@@ -1,0 +1,15 @@
+<main class="container">
+    <section>
+        <app-tip-filter
+            (tipFilter)="onFilterChange($event)"
+            (tip)="onClearFilters()"
+        >
+        </app-tip-filter>
+    </section>
+    <section>
+        <app-tip-card
+            [tips]="tips"
+        >
+        </app-tip-card>
+    </section>
+</main>

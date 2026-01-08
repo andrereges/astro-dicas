@@ -1,0 +1,40 @@
+<!-- LISTA -->
+<ng-container *ngIf="tips.length > 0; else emptyState">
+  <mat-card class="tip-card" *ngFor="let t of tips">
+
+    <mat-card-content>
+      <h3>{{ t.title }}</h3>
+
+      <blockquote
+        class="instagram-media"
+        [attr.data-instgrm-permalink]="t.videoUrl"
+        data-instgrm-allowfullscreen
+        data-instgrm-version="14">
+      </blockquote>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button
+        mat-flat-button
+        color="accent"
+        *ngIf="t.onlyWithProduct"
+      >
+        Ver Produto
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</ng-container>
+
+<!-- EMPTY STATE -->
+<ng-template #emptyState>
+  <mat-card class="empty-state">
+    <mat-card-content>
+      <h3>Nenhum vídeo encontrado</h3>
+      <p>
+        Não encontramos vídeos que correspondam aos filtros aplicados.
+        Tente ajustar os filtros ou buscar por outro termo.
+      </p>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

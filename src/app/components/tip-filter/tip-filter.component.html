@@ -1,0 +1,65 @@
+<div class="filter-container">
+  <div class="row">
+    <app-search-field
+      [value]="searchTextFilter"
+      (valueChange)="searchTextFilter = $event"
+    ></app-search-field>
+  </div>
+  <div class="row">
+    <app-autocomplete-field
+      #channelAutocomplete
+      label="Canal"
+      [dataSource]="channelService"
+      [displayWith]="channelLabel"
+      (valueChange)="onChannelSelected($event)"
+    />
+  </div>
+
+  <app-autocomplete-field
+    #systemAutocomplete
+    label="Sistema"
+    [dataSource]="systemService"
+    [displayWith]="systemLabel"
+    (valueChange)="onSystemSelected($event)"
+  />
+
+  <app-autocomplete-field
+    #partAutocomplete
+    label="Peça"
+    [dataSource]="partService"
+    [displayWith]="partLabel"
+    (valueChange)="onPartSelected($event)"
+  />
+
+  <app-autocomplete-field
+    #brandAutocomplete
+    label="Marca"
+    [dataSource]="brandService"
+    [displayWith]="brandLabel"
+    (valueChange)="onBrandSelected($event)"
+  />
+
+  <app-autocomplete-field
+    #modelAutocomplete
+    label="Modelo"
+    [dataSource]="modelService"
+    [displayWith]="modelLabel"
+    [context]="{ brandId: brandFilter?.id }"
+    (valueChange)="onModelSelected($event)"
+  />
+
+  <div class="row">
+    <app-checkbox-field
+      [label]="'Indicação de peça?'"
+      [checked]="onlyWithProductFilter"
+      (checkedChange)="onlyWithProductFilter = $event"
+    ></app-checkbox-field>
+  </div>
+
+  <div class="row actions">
+    <button mat-button (click)="cleanFilters()">Limpar</button>
+    <button mat-flat-button  color="primary" (click)="applyFilters()">
+      Aplicar
+    </button>
+  </div>
+</div>

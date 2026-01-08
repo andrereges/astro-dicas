@@ -1,0 +1,22 @@
+{
+  "name": "Astro Dicas",
+  "short_name": "Astro Dicas",
+  "description": "Aplicativo com vídeos e dicas automotivas",
+  "icons": [
+    {
+      "src": "assets/icons/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#cb0e40",
+  "theme_color": "#cb0e40",
+  "orientation": "portrait"
+}

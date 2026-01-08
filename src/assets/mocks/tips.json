@@ -1,0 +1,60 @@
+[
+  {
+    "id": "1",
+    "title": "R$600 resolvido com R$5",
+    "summary": "Descubra como economizar na manutenção do câmbio automático do seu Hyundai HB20 com uma dica simples e eficaz.",
+    "channel": {
+      "id": "1",
+      "name": "Daniel Dicas Automotivas"
+    },
+    "publishedAt": "2026-01-01",
+    "brand": {
+      "id": "1",
+      "name": "Hyundai"
+    },
+    "model": {
+      "id": "2",
+      "name": "HB20",
+      "brandId": "1"
+    },
+    "system": {
+      "id": "1",
+      "name": "Câmbio"
+    },
+    "part": {
+      "id": "1",
+      "name": "Câmbio Automático"
+    },
+    "onlyWithProduct": false,
+    "videoUrl": "https://www.instagram.com/reel/DAWLOU2RUfA/"
+  },
+  {
+    "id": "2",
+    "title": "Correia banhada a óleo",
+    "summary": "Saiba como identificar e resolver o problema da correia dentada banhada a óleo no seu Chevrolet Celta com esta dica prática.",
+    "channel": {
+      "id": "1",
+      "name": "Daniel Dicas Automotivas"
+    },
+    "publishedAt": "2026-01-02",
+    "brand": {
+      "id": "2",
+      "name": "Chevrolet"
+    },
+    "model": {
+      "id": "1",
+      "name": "Celta",
+      "brandId": "2"
+    },
+    "system": {
+      "id": "2",
+      "name": "Motor"
+    },
+    "part": {
+      "id": "2",
+      "name": "Correia dentada"
+    },
+    "onlyWithProduct": false,
+    "videoUrl": "https://www.instagram.com/reel/DSVsf_lkdlN/"
+  }
+]
