@@ -3,6 +3,7 @@ import { Channel } from "./channel.model"
 import { Model } from "./model.model"
 import { Part } from "./part.model"
 import { System } from "./system.model"
+import { Video } from "./video.model"
 
 export interface Tip {
     id: string
@@ -18,5 +19,5 @@ export interface Tip {
     part: Part
     
     onlyWithProduct: boolean
-    videoUrl: string
+    video: Video
 }

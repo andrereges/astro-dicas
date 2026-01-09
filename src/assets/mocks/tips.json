@@ -26,7 +26,11 @@
       "name": "Câmbio Automático"
     },
     "onlyWithProduct": false,
-    "videoUrl": "https://www.instagram.com/reel/DAWLOU2RUfA/"
+    "video": {
+      "id": "1",
+      "type": "INSTAGRAM",
+      "url": "https://www.instagram.com/reel/DAWLOU2RUfA/"
+    }
   },
   {
     "id": "2",
@@ -55,6 +59,10 @@
       "name": "Correia dentada"
     },
     "onlyWithProduct": false,
-    "videoUrl": "https://www.instagram.com/reel/DSVsf_lkdlN/"
+    "video": {
+      "id": "2",
+      "type": "INSTAGRAM",
+      "url": "https://www.instagram.com/reel/DSVsf_lkdlN/"
+    }
   }
 ]
