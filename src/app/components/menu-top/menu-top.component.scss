@@ -6,9 +6,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  background: linear-gradient(90deg, #6B4F3B, #4E3A2D); // degradê marrom
-  color: #FFF9F0; // texto claro
+  background: linear-gradient(90deg, #313639, #282828);
+  color: #FFF9F0;
   box-shadow: 0 4px 8px rgba(0,0,0,0.25);
   position: sticky;
   top: 0;
@@ -21,14 +20,8 @@
   gap: 12px;
 
   .logo {
-    width: 50px;
-    height: 50px;
-  }
-
-  .brand-name {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #FFF9F0; // cor clara para contraste
+    width: 175px;
+    height: 75px;
   }
 }
 

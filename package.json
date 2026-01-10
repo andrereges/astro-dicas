@@ -1,13 +1,13 @@
 {
-  "name": "astro-dicas",
-  "version": "0.0.0",
+  "name": "astro-select-dicas",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:astro-dicas": "node dist/astro-dicas/server/server.mjs"
+    "serve:ssr:astro-select-dicas": "node dist/astro-select-dicas/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,
