@@ -31,18 +31,19 @@ export class TipService {
         !normalizedFilter.searchText ||
         this.normalize(t.title).includes(normalizedFilter.searchText) ||
         this.normalize(t.summary).includes(normalizedFilter.searchText) ||
-        this.normalize(t.part.name).includes(normalizedFilter.searchText) ||
-        this.normalize(t.system.name).includes(normalizedFilter.searchText) ||
-        this.normalize(t.model.name).includes(normalizedFilter.searchText) ||
-        this.normalize(t.brand.name).includes(normalizedFilter.searchText)
+        t.parts.some(item => this.normalize(item.name).includes(normalizedFilter.searchText)) ||
+        t.systems.some(item => this.normalize(item.name).includes(normalizedFilter.searchText)) ||
+        t.brands.some(item => this.normalize(item.name).includes(normalizedFilter.searchText)) ||
+        t.models.some(item => this.normalize(item.name).includes(normalizedFilter.searchText)
+      )
 
       return (
         (!normalizedFilter.searchText || matchesSearch) &&
         (!normalizedFilter.channelId  || t.channel.id === normalizedFilter.channelId) &&
-        (!normalizedFilter.brandId    || t.brand.id   === normalizedFilter.brandId) &&
-        (!normalizedFilter.modelId    || t.model.id   === normalizedFilter.modelId) &&
-        (!normalizedFilter.systemId   || t.system.id  === normalizedFilter.systemId) &&
-        (!normalizedFilter.partId     || t.part.id    === normalizedFilter.partId) &&
+        (!normalizedFilter.brandId    || t.brands.some(item => item.id === normalizedFilter.brandId)) &&
+        (!normalizedFilter.modelId    || t.models.some(item => item.id === normalizedFilter.modelId)) &&
+        (!normalizedFilter.systemId   || t.systems.some(item => item.id === normalizedFilter.systemId)) &&
+        (!normalizedFilter.systemId   || t.systems.some(item => item.id === normalizedFilter.systemId)) &&
         (!normalizedFilter.onlyWithProduct || t.onlyWithProduct === true)
       )
     })

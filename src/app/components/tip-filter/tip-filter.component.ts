@@ -15,13 +15,15 @@ import { CheckboxFieldComponent } from "../checkbox-field/checkbox-field.compone
 import { TipService } from '../../services/tip.service'
 import { TipFilter } from '../../models/tip-filter.model'
 import { FormsModule } from "@angular/forms"
-import { SearchFieldComponent } from "../search-field/search-field.component";
+import { SearchFieldComponent } from "../search-field/search-field.component"
+import { MatExpansionModule } from '@angular/material/expansion'
 
 @Component({
   selector: 'app-tip-filter',
   standalone: true,
   imports: [
     AutocompleteFieldComponent,
+    MatExpansionModule,
     CommonModule,
     CheckboxFieldComponent,
     FormsModule,
@@ -99,6 +101,24 @@ export class TipFilterComponent {
     this.tipFilter.emit(filter)
   }
 
+  get advancedFiltersLabel(): string {
+    const count = this.activeAdvancedFiltersCount;
+    return count > 0 ? `Filtro avançado (${count})` : 'Filtro avançado'
+  }
+
+  get activeAdvancedFiltersCount(): number {
+    let count = 0;
+
+    if (this.channelFilter) count++
+    if (this.systemFilter) count++
+    if (this.partFilter) count++
+    if (this.brandFilter) count++
+    if (this.modelFilter) count++
+    if (this.onlyWithProductFilter) count++
+
+    return count
+  }
+
   cleanFilters() {
     this.searchTextFilter = ''
     this.channelFilter = undefined
@@ -115,5 +135,6 @@ export class TipFilterComponent {
     this.modelAutocomplete?.clearInput()
 
     this.tipFilterClear.emit()
+    this.applyFilters()
   }
 }

@@ -8,23 +8,31 @@
       "name": "Daniel Dicas Automotivas"
     },
     "publishedAt": "2026-01-01",
-    "brand": {
-      "id": "1",
-      "name": "Hyundai"
-    },
-    "model": {
-      "id": "2",
-      "name": "HB20",
-      "brandId": "1"
-    },
-    "system": {
-      "id": "1",
-      "name": "Câmbio"
-    },
-    "part": {
-      "id": "1",
-      "name": "Câmbio Automático"
-    },
+    "brands": [
+      {
+        "id": "2",
+        "name": "Hyundai"
+      }
+    ],
+    "models": [
+      {
+        "id": "2",
+        "name": "HB20",
+        "brandId": "2"
+      }
+    ],
+    "systems": [
+      {
+        "id": "1",
+        "name": "Câmbio"
+      }
+    ],
+    "parts": [
+      {
+        "id": "1",
+        "name": "Câmbio Automático"
+      }
+    ],
     "onlyWithProduct": false,
     "video": {
       "id": "1",
@@ -41,23 +49,31 @@
       "name": "Daniel Dicas Automotivas"
     },
     "publishedAt": "2026-01-02",
-    "brand": {
-      "id": "2",
-      "name": "Chevrolet"
-    },
-    "model": {
-      "id": "1",
-      "name": "Celta",
-      "brandId": "2"
-    },
-    "system": {
-      "id": "2",
-      "name": "Motor"
-    },
-    "part": {
+    "brands": [
+      {
+        "id": "1",
+        "name": "Chevrolet"
+      }
+    ],
+    "models": [
+        {
+        "id": "1",
+        "name": "Celta",
+        "brandId": "1"
+      }
+    ],
+    "systems": [
+      {
+        "id": "2",
+        "name": "Motor"
+      }
+    ],
+    "parts": [
+      {
       "id": "2",
       "name": "Correia dentada"
-    },
+      }
+    ],
     "onlyWithProduct": false,
     "video": {
       "id": "2",

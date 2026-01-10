@@ -1,26 +1,26 @@
-.embed-container {
-    position: relative;
-    width: 100%;
-    padding-bottom: 177.77%;
-    height: 0;
-    overflow: hidden;
-    border-radius: 20px;
-    margin-top: 16px;
-}
-.embed-container iframe, .embed-container blockquote {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+mat-card-content h3 {
+  margin-bottom: 1rem;
+  color: #1f1f1f;
 }
 
-.empty-state {
-  text-align: center;
-  padding: 32px;
-  opacity: 0.85;
+mat-card-actions button {
+  border-radius: 24px;
+  background-color: #1f3d2b;
+  color: #fff;
+}
 
-  h3 {
-    margin-bottom: 8px;
-  }
+.tip-card {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 20px;
+  background: #ffffff;
+  align-items: center;
+}
+
+.tip-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+  align-items: start;
 }

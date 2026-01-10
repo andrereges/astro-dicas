@@ -1,44 +1,48 @@
-<mat-form-field appearance="outline" class="full">
-  <mat-label>{{ label }}</mat-label>
+<div class="filter-group">
+  <mat-form-field appearance="outline">
+    <mat-label>{{ label }}</mat-label>
 
-  <input
-    #inputRef
-    matInput
-    [matAutocomplete]="auto"
-    (input)="onInputChange($event.target.value)"
-  />
+    <input
+      #inputRef
+      matInput
+      [matAutocomplete]="auto"
+      (input)="onInputChange($event.target.value)"
+    />
 
-  <button
-    mat-icon-button
-    matSuffix
-    *ngIf="inputRef?.value"
-    (click)="onClearClick($event)"
-    aria-label="Limpar campo"
-  >
-    <mat-icon>close</mat-icon>
-  </button>
-
-  <mat-autocomplete
-    #auto="matAutocomplete"
-    [displayWith]="displayWith"
-    (optionSelected)="onSelected($event.option.value)"
-  >
-    <mat-option
-      *ngFor="let item of state.items"
-      [value]="item"
+    <button
+      class="clear-filters-btn"
+      mat-icon-button
+      matSuffix
+      *ngIf="inputRef?.value"
+      (click)="onClearClick($event)"
+      aria-label="Limpar campo"
     >
-      {{ displayWith(item) }}
-    </mat-option>
+      <mat-icon>close</mat-icon>
+    </button>
 
-    <mat-option
-      *ngIf="state.hasMore && !state.loading"
-      (click)="load()"
+    <mat-autocomplete
+      #auto="matAutocomplete"
+      [displayWith]="displayWith"
+      (optionSelected)="onSelected($event.option.value)"
     >
-      Carregar mais...
-    </mat-option>
+      <mat-option
+        *ngFor="let item of state.items"
+        [value]="item"
+      >
+        {{ displayWith(item) }}
+      </mat-option>
 
-    <mat-option *ngIf="state.loading" disabled>
-      Carregando...
-    </mat-option>
-  </mat-autocomplete>
-</mat-form-field>
+      <mat-option
+        *ngIf="state.hasMore && !state.loading"
+        (click)="load()"
+      >
+        Carregar mais...
+      </mat-option>
+
+      <mat-option *ngIf="state.loading" disabled>
+        Carregando...
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+
+</div>

@@ -1,65 +1,89 @@
 <div class="filter-container">
-  <div class="row">
+
+  <!-- 🔍 BUSCA PRINCIPAL -->
+  <div class="search-row">
     <app-search-field
       [value]="searchTextFilter"
       (valueChange)="searchTextFilter = $event"
     ></app-search-field>
   </div>
-  <div class="row">
-    <app-autocomplete-field
-      #channelAutocomplete
-      label="Canal"
-      [dataSource]="channelService"
-      [displayWith]="channelLabel"
-      (valueChange)="onChannelSelected($event)"
-    />
-  </div>
 
-  <app-autocomplete-field
-    #systemAutocomplete
-    label="Sistema"
-    [dataSource]="systemService"
-    [displayWith]="systemLabel"
-    (valueChange)="onSystemSelected($event)"
-  />
+  <!-- 🔽 FILTROS AVANÇADOS -->
+  <mat-expansion-panel class="advanced-panel" togglePosition="after">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ advancedFiltersLabel }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
 
-  <app-autocomplete-field
-    #partAutocomplete
-    label="Peça"
-    [dataSource]="partService"
-    [displayWith]="partLabel"
-    (valueChange)="onPartSelected($event)"
-  />
+    <!-- GRID DE FILTROS -->
+    <div class="filters-grid">
 
-  <app-autocomplete-field
-    #brandAutocomplete
-    label="Marca"
-    [dataSource]="brandService"
-    [displayWith]="brandLabel"
-    (valueChange)="onBrandSelected($event)"
-  />
+      <app-autocomplete-field
+        #channelAutocomplete
+        label="Canal"
+        [dataSource]="channelService"
+        [displayWith]="channelLabel"
+        (valueChange)="onChannelSelected($event)"
+      ></app-autocomplete-field>
 
-  <app-autocomplete-field
-    #modelAutocomplete
-    label="Modelo"
-    [dataSource]="modelService"
-    [displayWith]="modelLabel"
-    [context]="{ brandId: brandFilter?.id }"
-    (valueChange)="onModelSelected($event)"
-  />
+      <app-autocomplete-field
+        #systemAutocomplete
+        label="Sistema"
+        [dataSource]="systemService"
+        [displayWith]="systemLabel"
+        (valueChange)="onSystemSelected($event)"
+      ></app-autocomplete-field>
 
-  <div class="row">
-    <app-checkbox-field
-      [label]="'Indicação de peça?'"
-      [checked]="onlyWithProductFilter"
-      (checkedChange)="onlyWithProductFilter = $event"
-    ></app-checkbox-field>
-  </div>
+      <app-autocomplete-field
+        #partAutocomplete
+        label="Peça"
+        [dataSource]="partService"
+        [displayWith]="partLabel"
+        (valueChange)="onPartSelected($event)"
+      ></app-autocomplete-field>
 
-  <div class="row actions">
-    <button mat-button (click)="cleanFilters()">Limpar</button>
-    <button mat-flat-button  color="primary" (click)="applyFilters()">
-      Aplicar
+      <app-autocomplete-field
+        #brandAutocomplete
+        label="Marca"
+        [dataSource]="brandService"
+        [displayWith]="brandLabel"
+        (valueChange)="onBrandSelected($event)"
+      ></app-autocomplete-field>
+
+      <app-autocomplete-field
+        #modelAutocomplete
+        label="Modelo"
+        [dataSource]="modelService"
+        [displayWith]="modelLabel"
+        [context]="{ brandId: brandFilter?.id }"
+        (valueChange)="onModelSelected($event)"
+      ></app-autocomplete-field>
+
+      <app-checkbox-field
+        [label]="'Somente com produto'"
+        [checked]="onlyWithProductFilter"
+        (checkedChange)="onlyWithProductFilter = $event"
+      ></app-checkbox-field>
+
+    </div>
+  </mat-expansion-panel>
+
+  <!-- AÇÃO SECUNDÁRIA -->
+  <div class="advanced-actions">
+    <button
+      mat-stroked-button
+      class="clear-filters-btn"
+      (click)="cleanFilters()"
+    >
+      Limpar
+    </button>
+    <button
+      mat-flat-button
+      class="search-button"
+      (click)="applyFilters()"
+    >
+      Buscar
     </button>
   </div>
 </div>

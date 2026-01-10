@@ -1,10 +1,11 @@
-import { AfterViewInit, Component } from "@angular/core"
+import { AfterContentInit, Component, OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { TipFilterComponent } from "../../../components/tip-filter/tip-filter.component"
 import { TipCardComponent } from "../../../components/tip-card/tip-card.component"
 import { Tip } from "../../../models/tip.model"
 import { TipService } from "../../../services/tip.service"
 import { TipFilter } from "../../../models/tip-filter.model"
+import { MenuTopComponent } from "../../../components/menu-top/menu-top.component";
 
 @Component({
   selector: 'app-tip-list',
@@ -12,16 +13,30 @@ import { TipFilter } from "../../../models/tip-filter.model"
   imports: [
     CommonModule,
     TipFilterComponent,
-    TipCardComponent
+    TipCardComponent,
+    MenuTopComponent
 ],
   templateUrl: './tip-list.page.html',
   styleUrls: ['./tip-list.page.scss']
 })
-export class TipListPage implements AfterViewInit {
+export class TipListPage implements OnInit, AfterContentInit {
 
   tips: Tip[] = []
+  filter: TipFilter = {}
 
-  constructor(private tipService: TipService) {}
+  constructor(private tipService: TipService) { }
+
+  ngOnInit(): void {
+    this.loadInstagramScript()
+  }
+
+  ngAfterContentInit(): void {
+    this.tipService.search(this.filter).subscribe(result => {
+      this.tips = result
+    })
+
+    setInterval(() => this.renderInstagramEmbeds())
+  }
 
   onFilterChange(filter: TipFilter) {
     this.tips = []
@@ -30,16 +45,11 @@ export class TipListPage implements AfterViewInit {
       this.tips = result
     })
 
-    this.loadInstagramScript()
+    setInterval(() => this.renderInstagramEmbeds())
   }
 
   onClearFilters() {
     this.tips = []
-    this.loadInstagramScript()
-  }
-
-  ngAfterViewInit() {
-    this.loadInstagramScript()
   }
 
   private loadInstagramScript() {

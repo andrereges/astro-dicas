@@ -12,11 +12,10 @@ export interface Tip {
     channel: Channel
     publishedAt: Date
 
-    brand: Brand
-    model: Model
-
-    system: System
-    part: Part
+    brands: Brand[]
+    models: Model[]
+    systems: System[]
+    parts: Part[]
     
     onlyWithProduct: boolean
     video: Video

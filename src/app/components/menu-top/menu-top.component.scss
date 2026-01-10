@@ -1,0 +1,64 @@
+:host {
+  display: block;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: linear-gradient(90deg, #6B4F3B, #4E3A2D); // degradê marrom
+  color: #FFF9F0; // texto claro
+  box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-name {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #FFF9F0; // cor clara para contraste
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 24px;
+
+  a {
+    color: #2A6F3C;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease, border-bottom 0.2s ease;
+
+    &:hover {
+      color: #FFF9F0;
+      border-bottom: 2px solid #FFF9F0;
+    }
+  }
+}
+
+/* Versão mobile */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .menu {
+    width: 100%;
+    justify-content: space-around;
+  }
+}

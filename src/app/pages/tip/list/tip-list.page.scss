@@ -1,43 +1,6 @@
 .container {
   max-width: 1280px;
-  margin: 0 auto;
   padding: 16px;
-
   display: flex;
   flex-direction: column;
-  gap: 24px;
-}
-
-/* Filtro */
-.container > section:first-child {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 16px;
-
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-}
-
-/* Lista de cards */
-.container > section:last-child {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-/* Tablet */
-@media (min-width: 768px) {
-  .container {
-    padding: 24px;
-  }
-
-  .container > section:last-child {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Desktop */
-@media (min-width: 1024px) {
-  .container > section:last-child {
-    grid-template-columns: repeat(3, 1fr);
-  }
 }
