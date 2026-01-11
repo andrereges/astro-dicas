@@ -1,10 +1,30 @@
 [
   {
     "id": "1",
-    "name": "Câmbio"
+    "name": "Bico Injetor"
   },
   {
     "id": "2",
-    "name": "Correia dentada"
+    "name": "Biela"
+  },
+  {
+    "id": "3",
+    "name": "Pistão"
+  },
+  {
+    "id": "4",
+    "name": "Bloco do Motor"
+  },
+  {
+    "id": "5",
+    "name": "Trocador de Calor"
+  },
+  {
+    "id": "6",
+    "name": "Radiador de Óleo do Câmbio"
+  },
+  {
+    "id": "7",
+    "name": "Pacote de Embreagem do Câmbio"
   }
 ]

@@ -28,22 +28,6 @@
       ></app-autocomplete-field>
 
       <app-autocomplete-field
-        #systemAutocomplete
-        label="Sistema"
-        [dataSource]="systemService"
-        [displayWith]="systemLabel"
-        (valueChange)="onSystemSelected($event)"
-      ></app-autocomplete-field>
-
-      <app-autocomplete-field
-        #partAutocomplete
-        label="Peça"
-        [dataSource]="partService"
-        [displayWith]="partLabel"
-        (valueChange)="onPartSelected($event)"
-      ></app-autocomplete-field>
-
-      <app-autocomplete-field
         #brandAutocomplete
         label="Marca"
         [dataSource]="brandService"
@@ -58,6 +42,22 @@
         [displayWith]="modelLabel"
         [context]="{ brandId: brandFilter?.id }"
         (valueChange)="onModelSelected($event)"
+      ></app-autocomplete-field>
+
+      <app-autocomplete-field
+        #systemAutocomplete
+        label="Sistema"
+        [dataSource]="systemService"
+        [displayWith]="systemLabel"
+        (valueChange)="onSystemSelected($event)"
+      ></app-autocomplete-field>
+
+      <app-autocomplete-field
+        #partAutocomplete
+        label="Peça"
+        [dataSource]="partService"
+        [displayWith]="partLabel"
+        (valueChange)="onPartSelected($event)"
       ></app-autocomplete-field>
 
       <app-checkbox-field

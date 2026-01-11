@@ -1,5 +1,5 @@
 {
-  "name": "astro-select-dicas",
+  "name": "indicadica",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:astro-select-dicas": "node dist/astro-select-dicas/server/server.mjs"
+    "serve:ssr:indicadica": "node dist/indicadica/server/server.mjs"
   },
   "prettier": {
     "printWidth": 100,

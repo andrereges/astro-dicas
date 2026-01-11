@@ -1,15 +1,15 @@
 {
-  "name": "Astro Select Dicas",
-  "short_name": "Astro Select Dicas",
+  "name": "Indicadica",
+  "short_name": "Indicadica",
   "description": "Aplicativo destinado a filtrar vídeos de dicas das redes sociais",
   "icons": [
     {
-      "src": "assets/images/logo/logo-192x192.png",
-      "sizes": "192x192",
+      "src": "images/logo/logo-256x256.png",
+      "sizes": "256x256",
       "type": "image/png"
     },
     {
-      "src": "assets/images/logo/logo-512x512.png",
+      "src": "images/logo/logo-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

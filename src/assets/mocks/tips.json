@@ -1,8 +1,8 @@
 [
   {
     "id": "1",
-    "title": "R$600 resolvido com R$5",
-    "summary": "Descubra como economizar na manutenção do câmbio automático do seu Hyundai HB20 com uma dica simples e eficaz.",
+    "title": "Falha grave no Ford Ka 1.5 Dragon",
+    "summary": "Ford Ka 1.5 Dragon sofreu calço hidráulico causado por bico injetor travado aberto, gerando excesso de combustível no cilindro. O líquido não comprime, provocando contra-golpe no pistão e empenamento de uma biela. O motor passou a vibrar excessivamente e o risco maior é a quebra da biela em alta rotação, o que pode destruir o bloco do motor. Diagnóstico indica necessidade de desmontagem e retífica.",
     "channel": {
       "id": "1",
       "name": "Daniel Dicas Automotivas"
@@ -10,40 +10,56 @@
     "publishedAt": "2026-01-01",
     "brands": [
       {
-        "id": "2",
-        "name": "Hyundai"
+        "id": "1",
+        "name": "Ford"
       }
     ],
     "models": [
       {
-        "id": "2",
-        "name": "HB20",
-        "brandId": "2"
+        "id": "1",
+        "name": "Ka",
+        "brandId": "1"
       }
     ],
     "systems": [
       {
         "id": "1",
-        "name": "Câmbio"
+        "name": "Motor"
+      },
+      {
+        "id": "2",
+        "name": "Injeção Eletrônica"
       }
     ],
     "parts": [
       {
         "id": "1",
-        "name": "Câmbio Automático"
+        "name": "Bico Injetor"
+      },
+      {
+        "id": "2",
+        "name": "Biela"
+      },
+      {
+        "id": "3",
+        "name": "Pistão"
+      },
+      {
+        "id": "4",
+        "name": "Bloco do Motor"
       }
     ],
     "onlyWithProduct": false,
     "video": {
       "id": "1",
       "type": "INSTAGRAM",
-      "url": "https://www.instagram.com/reel/DAWLOU2RUfA/"
+      "url": "https://www.instagram.com/reel/DTVptXeEe0X/"
     }
   },
   {
     "id": "2",
-    "title": "Correia banhada a óleo",
-    "summary": "Saiba como identificar e resolver o problema da correia dentada banhada a óleo no seu Chevrolet Celta com esta dica prática.",
+    "title": "Problema grave no trocador de calor",
+    "summary": "Defeito recorrente no trocador de calor dos veículos Fiat Argo e Cronos 1.8 e Jeep Renegade e Compass com câmbio automático de 6 marchas. O trocador de calor permite a mistura do líquido de arrefecimento com o óleo do câmbio, causando corrosão interna, perda de lubrificação e destruição dos pacotes de embreagem. O dano pode levar à perda total do câmbio, com custo elevado de substituição. A recomendação é manutenção preventiva, uso correto do líquido de arrefecimento, testes de eletrólise e, se possível, instalação de kit de tropicalização com radiador de óleo independente.",
     "channel": {
       "id": "1",
       "name": "Daniel Dicas Automotivas"
@@ -51,34 +67,65 @@
     "publishedAt": "2026-01-02",
     "brands": [
       {
-        "id": "1",
-        "name": "Chevrolet"
+        "id": "2",
+        "name": "Fiat"
+      },
+      {
+        "id": "3",
+        "name": "Jeep"
       }
     ],
     "models": [
-        {
-        "id": "1",
-        "name": "Celta",
-        "brandId": "1"
+      {
+        "id": "2",
+        "name": "Argo",
+        "brandId": "2"
+      },
+      {
+        "id": "3",
+        "name": "Cronos",
+        "brandId": "2"
+      },
+      {
+        "id": "4",
+        "name": "Renegade",
+        "brandId": "3"
+      },
+      {
+        "id": "5",
+        "name": "Compass",
+        "brandId": "3"
       }
     ],
     "systems": [
       {
-        "id": "2",
-        "name": "Motor"
+        "id": "3",
+        "name": "Câmbio Automático"
+      },
+      {
+        "id": "4",
+        "name": "Arrefecimento"
       }
     ],
     "parts": [
       {
-      "id": "2",
-      "name": "Correia dentada"
+        "id": "5",
+        "name": "Trocador de Calor"
+      },
+      {
+        "id": "6",
+        "name": "Radiador de Óleo do Câmbio"
+      },
+      {
+        "id": "7",
+        "name": "Pacote de Embreagem do Câmbio"
       }
     ],
     "onlyWithProduct": false,
     "video": {
       "id": "2",
       "type": "INSTAGRAM",
-      "url": "https://www.instagram.com/reel/DSVsf_lkdlN/"
+      "url": "https://www.instagram.com/reel/DFycc4GyXq2/"
     }
   }
 ]

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "astro-select-dicas": {
+    "indicadica": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -69,10 +69,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "astro-select-dicas:build:production"
+              "buildTarget": "indicadica:build:production"
             },
             "development": {
-              "buildTarget": "astro-select-dicas:build:development"
+              "buildTarget": "indicadica:build:development"
             }
           },
           "defaultConfiguration": "development"
