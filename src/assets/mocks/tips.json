@@ -95,6 +95,11 @@
         "id": "5",
         "name": "Compass",
         "brandId": "3"
+      },
+      {
+        "id": "6",
+        "name": "Toro",
+        "brandId": "2"
       }
     ],
     "systems": [
@@ -126,6 +131,59 @@
       "id": "2",
       "type": "INSTAGRAM",
       "url": "https://www.instagram.com/reel/DFycc4GyXq2/"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Toyota Etios: confiável, mas com pontos de atenção",
+    "summary": "Toyota Etios é destacado como um dos carros mais confiáveis da marca, capaz de rodar até meio milhão de quilômetros quando recebe manutenção básica correta, especialmente trocas periódicas de óleo. Apesar de ser considerado feio por muitos, é muito valorizado pela robustez. Os principais problemas crônicos são o regulador de voltagem, que fica próximo ao escapamento e costuma causar acendimento da luz da bateria, e desgastes na suspensão traseira, como bieletas e buchas do eixo traseiro, que geram pancadas secas. Há diferenças de peças conforme o ano, principalmente após 2016, exigindo atenção na compra. Disponível nas versões 1.3 e 1.5 16V.",
+    "channel": {
+      "id": "1",
+      "name": "Daniel Dicas Automotivas"
+    },
+    "publishedAt": "2026-01-01",
+    "brands": [
+      {
+        "id": "4",
+        "name": "Toyota"
+      }
+    ],
+    "models": [
+      {
+        "id": "7",
+        "name": "Etios",
+        "brandId": "4"
+      }
+    ],
+    "systems": [
+      {
+        "id": "5",
+        "name": "Sistema Elétrico"
+      },
+      {
+        "id": "6",
+        "name": "Suspensão"
+      }
+    ],
+    "parts": [
+      {
+        "id": "8",
+        "name": "Regulador de Voltagem"
+      },
+      {
+        "id": "9",
+        "name": "Bucha do Eixo Traseiro"
+      },
+      {
+        "id": "10",
+        "name": "Bieleta"
+      }
+    ],
+    "onlyWithProduct": false,
+    "video": {
+      "id": "3",
+      "type": "INSTAGRAM",
+      "url": "https://www.instagram.com/reel/DTbxZ62Edr9/"
     }
   }
 ]

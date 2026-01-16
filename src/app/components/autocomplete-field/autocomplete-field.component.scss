@@ -12,3 +12,28 @@
   background-color: #4d5155;
   color: #fff;
 }
+
+.load-more-option {
+  pointer-events: auto;
+  background-color: transparent !important;
+  cursor: pointer;
+}
+
+.load-more-option:hover {
+  background-color: rgba(63, 81, 181, 0.08) !important;
+}
+
+.load-more-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-weight: 500;
+  color: #313639;
+}
+
+.load-more-content mat-icon {
+  font-size: 20px;
+}

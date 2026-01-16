@@ -21,5 +21,8 @@ import { Tip } from '../../models/tip.model'
 export class TipCardComponent {
 
   @Input({ required: true })
+  processed: boolean = true
+
+  @Input({ required: true })
   tips: Tip[] = []
 }

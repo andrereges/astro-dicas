@@ -22,7 +22,7 @@ export class SystemService
     page: number
   ): Observable<AutocompletePage<System>> {
 
-    const pageSize = 10
+    const pageSize = 5
     const filtered = this.list.filter(item =>
       this.normalize(item.name).includes(this.normalize(search))
     )

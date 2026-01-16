@@ -1,5 +1,7 @@
 <header class="header">
-    <menu-top></menu-top>
+    <div class="layout-container">
+        <menu-top></menu-top>
+  </div>
 </header>
 
 <main class="container">
@@ -11,6 +13,7 @@
 
     <app-tip-card
         [tips]="tips"
+        [processed]="processed"
     >
     </app-tip-card>
 

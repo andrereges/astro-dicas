@@ -34,9 +34,13 @@
 
       <mat-option
         *ngIf="state.hasMore && !state.loading"
+        class="load-more-option"
         (click)="load()"
       >
-        Carregar mais...
+        <div class="load-more-content">
+          <mat-icon>expand_more</mat-icon>
+          <span>Carregar mais</span>
+        </div>
       </mat-option>
 
       <mat-option *ngIf="state.loading" disabled>

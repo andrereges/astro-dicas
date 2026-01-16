@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Injectable } from '@angular/core'
+import { Observable, of } from 'rxjs'
 import {
   AutocompleteDataSource,
   AutocompletePage
-} from '../models/autocomplete.model';
-import { Brand } from '../models/brand.model';
-import { HttpClient } from '@angular/common/http';
+} from '../models/autocomplete.model'
+import { Brand } from '../models/brand.model'
+import { HttpClient } from '@angular/common/http'
 
 @Injectable({ providedIn: 'root' })
 export class BrandService
@@ -22,17 +22,17 @@ export class BrandService
     page: number
   ): Observable<AutocompletePage<Brand>> {
 
-    const pageSize = 10;
+    const pageSize = 5
     const filtered = this.list.filter(item =>
       this.normalize(item.name).includes(this.normalize(search))
-    );
+    )
 
-    const start = page * pageSize;
+    const start = page * pageSize
 
     return of({
       items: filtered.slice(start, start + pageSize),
       hasMore: start + pageSize < filtered.length
-    });
+    })
   }
 
   private loadMock() {

@@ -26,5 +26,17 @@
   {
     "id": "7",
     "name": "Pacote de Embreagem do Câmbio"
+  },
+  {
+    "id": "8",
+    "name": "Regulador de Voltagem"
+  },
+  {
+    "id": "9",
+    "name": "Bucha do Eixo Traseiro"
+  },
+  {
+    "id": "10",
+    "name": "Bieleta"
   }
 ]

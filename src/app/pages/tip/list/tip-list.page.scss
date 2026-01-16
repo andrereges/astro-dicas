@@ -10,7 +10,7 @@
 
 .header {
   display: flex;
-  height: 100px;
+  height: 60px;
   justify-content: space-between;
   align-items: center;
   background: linear-gradient(90deg, #313639, #282828);
@@ -19,4 +19,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+}
+
+.layout-container {
+  margin-left: -25px;
+  margin-top: 15px;
 }

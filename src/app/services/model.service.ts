@@ -19,7 +19,7 @@ export class ModelService implements AutocompleteDataSource<Model> {
     context?: AutocompleteContext
   ): Observable<AutocompletePage<Model>> {
 
-    const pageSize = 10
+    const pageSize = 5
 
     let filtered = this.list
 

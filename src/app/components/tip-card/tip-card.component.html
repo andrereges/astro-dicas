@@ -1,8 +1,16 @@
+<!-- LOADING -->
+<ng-container *ngIf="!processed">
+  <mat-card class="empty-tip">
+    <mat-card-content class="empty-state">
+      <h3>Carregando...</h3>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
 <!-- LISTA -->
-<ng-container *ngIf="tips.length > 0; else emptyState">
+<ng-container *ngIf="processed && tips.length > 0">
   <div class="tip-grid">
     <mat-card class="tip-card" *ngFor="let t of tips">
-
       <mat-card-content>
         <h3>{{ t.title }}</h3>
 
@@ -18,16 +26,12 @@
 </ng-container>
 
 <!-- EMPTY STATE -->
-<ng-template #emptyState >
+<ng-container *ngIf="processed && tips.length === 0">
   <mat-card class="empty-tip">
     <mat-card-content class="empty-state">
       <h3>Nenhuma dica encontrada</h3>
-      <p>
-        Não encontramos dicas que correspondam aos filtros aplicados.
-      </p>
-      <p>
-        Tente ajustar os filtros ou buscar por outro termo.
-      </p>
+      <p>Não encontramos dicas que correspondam aos filtros aplicados.</p>
+      <p>Tente ajustar os filtros ou buscar por outro termo.</p>
     </mat-card-content>
   </mat-card>
-</ng-template>
+</ng-container>
