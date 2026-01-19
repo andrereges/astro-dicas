@@ -43,7 +43,7 @@ export class TipService {
         (!normalizedFilter.brandId    || t.brands.some(item => item.id === normalizedFilter.brandId)) &&
         (!normalizedFilter.modelId    || t.models.some(item => item.id === normalizedFilter.modelId)) &&
         (!normalizedFilter.systemId   || t.systems.some(item => item.id === normalizedFilter.systemId)) &&
-        (!normalizedFilter.systemId   || t.systems.some(item => item.id === normalizedFilter.systemId)) &&
+        (!normalizedFilter.partId     || t.parts.some(item => item.id === normalizedFilter.partId)) &&
         (!normalizedFilter.onlyWithProduct || t.onlyWithProduct === true)
       )
     })

@@ -9,7 +9,7 @@
   </div>
 
   <!-- 🔽 FILTROS AVANÇADOS -->
-  <mat-expansion-panel class="advanced-panel" togglePosition="after">
+  <mat-expansion-panel [(expanded)]="advancedExpanded" class="advanced-panel" togglePosition="after">
     <mat-expansion-panel-header>
       <mat-panel-title class="advanced-filter-label">
         {{ advancedFiltersLabel }}

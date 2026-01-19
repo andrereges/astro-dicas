@@ -42,6 +42,7 @@ export class TipFilterComponent {
   @Output() tipFilter = new EventEmitter<TipFilter>()
   @Output() tipFilterClear = new EventEmitter<void>()
 
+  advancedExpanded = false
   searchTextFilter: string = ''
   channelFilter?: Channel|undefined
   systemFilter?: System|undefined
@@ -99,6 +100,7 @@ export class TipFilterComponent {
     } as TipFilter
 
     this.tipFilter.emit(filter)
+    this.advancedExpanded = false
   }
 
   get advancedFiltersLabel(): string {
