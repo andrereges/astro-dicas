@@ -1,4 +1,4 @@
-import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnInit } from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { TipFilterComponent } from "../../../components/tip-filter/tip-filter.component"
 import { TipCardComponent } from "../../../components/tip-card/tip-card.component"
@@ -16,11 +16,11 @@ import { InstagramEmbedService } from "../../../services/instagram-embed.service
     TipFilterComponent,
     TipCardComponent,
     MenuTopComponent
-],
+  ],
   templateUrl: './tip-list.page.html',
   styleUrls: ['./tip-list.page.scss']
 })
-export class TipListPage implements OnInit, AfterViewChecked {
+export class TipListPage implements OnInit {
 
   processed = false
   tips: Tip[] = []
@@ -28,20 +28,18 @@ export class TipListPage implements OnInit, AfterViewChecked {
 
   constructor(
     private tipService: TipService,
-    private instagram: InstagramEmbedService
+    private instagramEmbedService: InstagramEmbedService
   ) {}
 
   ngOnInit() {
     this.tipService.search({}).subscribe(result => {
-      this.tips = result;
-    });
-  }
+      this.tips = result
+    })
 
-  ngAfterViewChecked() {
     if (this.tips.length && !this.processed) {
-      this.instagram.load();
-      this.instagram.process();
-      this.processed = true;
+      this.instagramEmbedService.load()
+      this.instagramEmbedService.process()
+      this.processed = true
     }
   }
 
@@ -51,47 +49,11 @@ export class TipListPage implements OnInit, AfterViewChecked {
     this.tipService.search(filter).subscribe(result => {
       this.tips = result
 
-      setTimeout(() => this.renderInstagramEmbeds(), 0)
+     setTimeout(() => this.instagramEmbedService.process(), 0)
     })
   }
 
   onClearFilters() {
     this.tips = []
-  }
-
-  private loadInstagramScript(): Promise<void> {
-    return new Promise(resolve => {
-      if ((window as any).instgrm) {
-        this.processed = true
-        resolve()
-        return
-      }
-
-      const script = document.createElement('script')
-      script.src = 'https://www.instagram.com/embed.js'
-      script.async = true
-      script.onload = () => {
-        this.processed = true
-        resolve()
-      }
-      document.body.appendChild(script)
-    })
-  }
-
-  private renderInstagramEmbeds() {
-    if ((window as any).instgrm?.Embeds) {
-      (window as any).instgrm.Embeds.process()
-    }
-  }
-
-  async ngAfterViewInit() {
-    await this.loadInstagramScript()
-
-    this.tipService.search(this.filter).subscribe(result => {
-      this.tips = result
-
-      // Aguarda o Angular renderizar o DOM
-      setTimeout(() => this.renderInstagramEmbeds(), 0)
-    })
   }
 }
