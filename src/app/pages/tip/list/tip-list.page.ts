@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core"
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
 import { TipFilterComponent } from "../../../components/tip-filter/tip-filter.component"
 import { TipCardComponent } from "../../../components/tip-card/tip-card.component"
@@ -20,40 +20,55 @@ import { InstagramEmbedService } from "../../../services/instagram-embed.service
   templateUrl: './tip-list.page.html',
   styleUrls: ['./tip-list.page.scss']
 })
-export class TipListPage implements OnInit {
+export class TipListPage implements OnInit, AfterViewInit {
 
+  private instagramReady = false
   processed = false
   tips: Tip[] = []
   filter: TipFilter = {}
 
   constructor(
     private tipService: TipService,
-    private instagramEmbedService: InstagramEmbedService
+    private instagramEmbedService: InstagramEmbedService,
+    private changeDetectorRef: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
-    this.tipService.search({}).subscribe(result => {
-      this.tips = result
-    })
+    this.loadTips({})
+  }
 
-    if (this.tips.length && !this.processed) {
-      this.instagramEmbedService.load()
-      this.instagramEmbedService.process()
-      this.processed = true
-    }
+  ngAfterViewInit() {
+    this.loadInstagramIfNeeded()
   }
 
   onFilterChange(filter: TipFilter) {
+    this.loadTips(filter)
+  }
+
+  private loadTips(filter: TipFilter) {
+    this.processed = false
+
     this.tips = []
 
     this.tipService.search(filter).subscribe(result => {
       this.tips = result
 
-     setTimeout(() => this.instagramEmbedService.process(), 0)
-    })
+      this.changeDetectorRef.detectChanges()
+
+      requestAnimationFrame(() => {
+        this.instagramEmbedService.process()
+      })
+
+      this.processed = true
+    }) 
   }
 
-  onClearFilters() {
-    this.tips = []
+  private loadInstagramIfNeeded() {
+    if (this.instagramReady) {
+      return
+    }
+
+    this.instagramEmbedService.load()
+    this.instagramReady = true
   }
 }
